@@ -22,23 +22,23 @@ TEST(PasswordTest, single_letter_password)
 	ASSERT_EQ(1, actual);
 };
 
-TEST(Password, mixed_case)
+TEST(PasswordTest, mixed_case)
 {
 	Password my_password;
 	bool actual = my_password.has_mixed_case("ABCdefghIjKLM");
 	ASSERT_EQ(true, actual);
 };
 
-// Test(Password, upper_only)
-// {
-// 	Password my_password;
-// 	int actual = my_password.has_mixed_case("ABCDEFG");
-// 	ASSERT_EQ(1, actual); 
-// };
+TEST(PasswordTest, upper_only)
+{
+	Password my_password;
+	bool actual = my_password.has_mixed_case("ABCDEFG");
+	ASSERT_EQ(false, actual); 
+};
 
-// Test(Password, lower_only)
-// {
-// 	Password my_password;
-// 	int actual = my_password.has_mixed_case("ABCDEFG");
-// 	ASSERT_EQ(1, actual); 
-// }
+TEST(PasswordTest, lower_only)
+{
+	Password my_password;
+	bool actual = my_password.has_mixed_case("ABCDEFG");
+	ASSERT_EQ(false, actual); 
+};

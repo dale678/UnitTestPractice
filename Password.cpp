@@ -27,9 +27,9 @@ bool Password::has_mixed_case(string pass){
   bool hasCapital = false;
   bool hasLower = false;
   for (int i = 0; i < pass.length(); i++) {
-    if (isupper(i)) {
+    if (isupper(pass.at(i))) {
       hasCapital = true;
-    } else if (islower(i)) {
+    } else if (islower(pass.at(i))) {
       hasLower = true;
     }
 
@@ -37,5 +37,5 @@ bool Password::has_mixed_case(string pass){
       break;
     }
   }
-  return (hasCapital && hasLower);
+  return hasCapital && hasLower;
 }
